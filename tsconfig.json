@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2024",
+    "lib": ["es2024"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+
+    // Node のネイティブ型ストリッピングで実行するため、
+    // 拡張子つき import を許可し、消せない構文（enum 等）を禁止する。
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "skipLibCheck": true
+  },
+  // フロントエンド（src/app）は tsconfig.app.json が受け持つ。
+  "include": ["src/lib/**/*.ts", "scripts/**/*.ts", "vite.config.ts"]
+}

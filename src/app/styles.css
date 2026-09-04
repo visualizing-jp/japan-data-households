@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  /* 紙のような無彩色に近い暖色系。データを主役にするため彩度は抑える。 */
+  --color-paper: #f7f5f1;
+  --color-surface: #ffffff;
+  --color-ink: #16140f;
+  --color-muted: #6d675d;
+  --color-faint: #a8a299;
+  --color-rule: #e3ded5;
+  --color-rule-strong: #cdc6ba;
+
+  /* 選択中の系列にだけ使う。使いどころを絞ることで意味を持たせる。 */
+  --color-accent: #b0392a;
+  --color-accent-soft: #e8d3ce;
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", sans-serif;
+
+  /* 標準の CSS イージングは弱いので、意図的に上書きする。 */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* 数値は桁が揃わないと比較できない。 */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* 動きに酔う人には位置の変化を消す。色と不透明度は理解を助けるので残す。 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

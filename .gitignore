@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+.next/
+out/
+.vercel/
+.svelte-kit/
+
+# Environment / secrets
+# e-Stat appId は必ずここ経由で扱う。コミットしないこと。
+.env
+.env.*
+!.env.example
+
+# Data pipeline
+# 生の e-Stat レスポンスは再取得可能なため追跡しない。
+# 加工後の配信用データ（public/data 等）は追跡する方針。
+data/raw/
+data/cache/
+*.parquet.tmp
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store
+
+# Local Netlify folder
+.netlify
+
+# Local capture artifacts
+.tmp-screenshots/

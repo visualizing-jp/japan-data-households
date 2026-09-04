@@ -1,0 +1,42 @@
+{
+  "name": "japan-data-households",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "日本人はどう暮らしてきたか — 世帯・家族類型の探索ダッシュボード",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "meta": "node --env-file-if-exists=.env scripts/fetch-meta.ts",
+    "fetch": "node --env-file-if-exists=.env scripts/fetch-data.ts",
+    "data": "node scripts/build.ts",
+    "verify": "node scripts/verify.ts",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.app.json"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/d3-array": "^3.2.2",
+    "@types/d3-scale": "^4.0.9",
+    "@types/d3-shape": "^3.2.0",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.2",
+    "vite": "^8.2.2",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "d3-array": "^3.2.4",
+    "d3-scale": "^4.0.2",
+    "d3-shape": "^3.2.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}
