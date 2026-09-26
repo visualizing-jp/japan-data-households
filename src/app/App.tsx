@@ -3,6 +3,7 @@ import { EraView } from "./views/EraView.tsx";
 import { HeadView } from "./views/HeadView.tsx";
 import { GeoView } from "./views/GeoView.tsx";
 import { useUrlState } from "./hooks/useUrlState.ts";
+import { SeriesBar, SeriesFooter } from "./components/Brand.tsx";
 
 const VIEWS = [
   { id: "era", label: "時代", hint: "1995–2050", ready: true },
@@ -20,6 +21,7 @@ export function App() {
   return (
     <div className="min-h-dvh">
       <header className="border-b border-rule bg-paper/85 backdrop-blur-sm">
+        <SeriesBar />
         <div className="mx-auto flex w-full max-w-[1240px] flex-wrap items-end justify-between gap-4 px-6 pt-5">
           <div>
             <h1 className="text-[15px] font-semibold tracking-tight">
@@ -62,12 +64,7 @@ export function App() {
       <footer className="mx-auto w-full max-w-[1240px] px-6 pt-2 pb-10 text-[11px] leading-relaxed text-faint">
         出典: 総務省「国勢調査」（e-Stat 経由）、国立社会保障・人口問題研究所「日本の世帯数の将来推計（全国推計）令和6(2024)年推計」。
         単位は一般世帯数とその構成比。2025年以降は推計。地域ビューに推計は含まない。
-        <a
-          href="https://visualizing.jp/"
-          className="mt-2 block w-fit transition-colors duration-150 hover:text-muted"
-        >
-          visualizing.jp
-        </a>
+        <SeriesFooter />
       </footer>
     </div>
   );
